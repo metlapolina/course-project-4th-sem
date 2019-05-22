@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="ToDoshka.ToDoItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:ToDoshka"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="650">
+    <Grid>
+        
+        <Border CornerRadius="10" Background="White">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="170"/>
+                </Grid.ColumnDefinitions>
+                <DockPanel Grid.Column="0">
+                    <ToggleButton x:Name="btn_TaskSolved" IsChecked="False" Margin="-15 -25 0 0" Width="40" Height="40" Background="LightGray" Style="{StaticResource MaterialDesignActionLightToggleButton}" Click="Btn_TaskSolved_Click"/>
+                    <TextBox x:Name="txt_Task" MaxLength="40" Style="{DynamicResource tb_ToDoItem}" VerticalAlignment="Center" IsReadOnly="True"/>
+                </DockPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 0 5 0">
+                    <Button x:Name="btn_EditTask" ToolTip="{DynamicResource _EditTask}" Click="Btn_EditTask_Click" Padding="0" Width="30" Height="30" Margin="0 0 3 0">
+                        <materialDesign:PackIcon x:Name="md_EditTask" Kind="Edit" Foreground="White" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="btn_Deadline" ToolTip="{DynamicResource _Deadline}" Padding="0" Width="30" Height="30" Margin="0 0 3 0">
+                        <DatePicker x:Name="dp_Deadline" Width="100" Height="55" Margin="-86 7 -3 0" SelectedDateChanged="Dp_Deadline_SelectedDateChanged" FontSize="8" BorderBrush="White" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"/>
+                    </Button>
+                    <Button ToolTip="{DynamicResource _Importance}" Padding="0" Margin="0 0 3 0" Width="30" Height="30">
+                        <ComboBox x:Name="cb_Importance" materialDesign:HintAssist.Hint=" !" Margin="0 0 -9 0" FontSize="26" FontWeight="ExtraBold" BorderBrush="Transparent" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Width="30" Height="30">
+                            <materialDesign:RatingBar Max="3" Value="0" x:Name="BasicRatingBar" Foreground="White" ValueChanged="BasicRatingBar_ValueChanged"/>
+                        </ComboBox>
+                    </Button>
+                    <Button ToolTip="{DynamicResource _AddSub}" Click="Btn_AddSubtask_Click" Padding="0" Width="30" Height="30" Margin="0 0 3 0">
+                        <materialDesign:PackIcon  Kind="Add" Foreground="White" Width="25" Height="25"/>
+                    </Button>
+                    <Button ToolTip="{DynamicResource _Delete}" Click="Btn_Delete_Click" Padding="0" Width="30" Height="30">
+                        <materialDesign:PackIcon Kind="Delete" Foreground="White" Width="25" Height="25"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

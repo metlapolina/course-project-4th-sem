@@ -1,0 +1,13 @@
+﻿<Window x:Class="ToDoshka.AttachWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoshka"
+        mc:Ignorable="d" Icon="/resources/icon/todo.png"
+        x:Name="wd_Attach" Title="{DynamicResource _AttachWindow}" Height="450" Width="600" WindowStartupLocation="CenterOwner">
+    <Grid x:Name="gd_ShowStatistics">
+        <Image x:Name="img_ShowImage"/>
+        <RichTextBox x:Name="rtb_ShowText"/>
+    </Grid>
+</Window>

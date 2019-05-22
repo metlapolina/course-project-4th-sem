@@ -1,0 +1,62 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    
+    <v:String x:Key="_Search">Поиск</v:String>
+
+    <v:String x:Key="_AddTask">Добавить задачу</v:String>
+    <v:String x:Key="_Profile">Профиль</v:String>
+    <v:String x:Key="_Settings">Настройки</v:String>
+    <v:String x:Key="_Exit">Выход</v:String>
+    <v:String x:Key="_CurrentDate">Сегодня:</v:String>
+
+    <v:String x:Key="_EditProfLoc">Добавьте информацию о себе в настройках.</v:String>
+    <v:String x:Key="_Edit">Редактировать</v:String>
+    <v:String x:Key="_Statistics">Статистика</v:String>
+
+    <v:String x:Key="_Email">Email</v:String>
+    <v:String x:Key="_Phone">Телефон</v:String>
+    <v:String x:Key="_Contact">Контакты</v:String>
+
+    <v:String x:Key="_ChangeTheme">Сменить тему</v:String>
+    <v:String x:Key="_ChangeLang">Сменить язык</v:String>
+    <v:String x:Key="_ChangeDesc">Изменить описание</v:String>
+    <v:String x:Key="_Change">Изменить</v:String>
+
+    <v:String x:Key="_UploadPhoto">Загрузить фото</v:String>
+    <v:String x:Key="_AboutUser">Не указан</v:String>
+
+    <v:String x:Key="_PersonalTask">Личные задачи</v:String>
+    <v:String x:Key="_WorkTask">Рабочие задачи</v:String>
+
+    <v:String x:Key="_Scheduled">Запланированные задачи:</v:String>
+    <v:String x:Key="_Completed">Выполненные задачи:</v:String>
+
+    <v:String x:Key="_FromDate">С</v:String>
+    <v:String x:Key="_ToDate">по</v:String>
+
+    <v:String x:Key="_Build">Построить</v:String>
+    <v:String x:Key="_DblClick">Двойной клик ПКМ</v:String>
+    
+    <v:String x:Key="_LegendTasks">Задачи</v:String>
+
+    <v:String x:Key="_AttachWindow">Окно приложения</v:String>
+
+
+    <v:String x:Key="_AllTasks">Показать все задачи</v:String>
+
+    <v:String x:Key="_ChangePhoto">Сменить фото</v:String>
+
+    <v:String x:Key="_About">О программе</v:String>
+    <v:String x:Key="_Alert">Напоминание о запланированных задачах</v:String>
+    <v:String x:Key="_MainPage">Главная страница</v:String>
+
+    <v:String x:Key="_EditTask">Редактировать текст</v:String>
+    <v:String x:Key="_Deadline">Установить дедлайн</v:String>
+    <v:String x:Key="_Importance">Установить важность</v:String>
+    <v:String x:Key="_AddSub">Добавить подзадачу</v:String>
+    <v:String x:Key="_Delete">Удалить</v:String>
+    <v:String x:Key="_AddImg">Добавить картинку</v:String>
+    <v:String x:Key="_AddFile">Добавить файл</v:String>
+
+</ResourceDictionary>

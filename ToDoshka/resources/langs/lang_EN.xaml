@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <v:String x:Key="_Search">Search</v:String>
+    
+    <v:String x:Key="_AddTask">Add task</v:String>
+    <v:String x:Key="_Profile">Profile</v:String>
+    <v:String x:Key="_Settings">Settings</v:String>
+    <v:String x:Key="_Exit">Exit</v:String>
+    <v:String x:Key="_CurrentDate">Today: </v:String>
+
+    <v:String x:Key="_EditProfLoc">Add info about yourself in the edit settings.</v:String>
+    <v:String x:Key="_Edit">Edit profile</v:String>
+    <v:String x:Key="_Statistics">Statistics</v:String>
+    
+    <v:String x:Key="_Email">Email</v:String>
+    <v:String x:Key="_Phone">Phone</v:String>
+    <v:String x:Key="_Contact">Contacts</v:String>
+    
+    <v:String x:Key="_ChangeTheme">Change Theme</v:String>
+    <v:String x:Key="_ChangeLang">Change language</v:String>
+    <v:String x:Key="_ChangeDesc">Change description</v:String>
+    <v:String x:Key="_Change">Change</v:String>
+
+    <v:String x:Key="_UploadPhoto">Upload profile photo</v:String>
+    <v:String x:Key="_AboutUser">Not specified</v:String>
+
+    <v:String x:Key="_PersonalTask">Personal task</v:String>
+    <v:String x:Key="_WorkTask">Work task</v:String>
+
+    <v:String x:Key="_Scheduled">Scheduled tasks:</v:String>
+    <v:String x:Key="_Completed">Completed tasks:</v:String>
+    
+    <v:String x:Key="_FromDate">From</v:String>
+    <v:String x:Key="_ToDate">to</v:String>
+
+    <v:String x:Key="_Build">Build</v:String>
+    <v:String x:Key="_DblClick">Double click</v:String>
+
+    <v:String x:Key="_LegendTasks">Tasks</v:String>
+    
+    <v:String x:Key="_AttachWindow">Attach</v:String>
+
+    <v:String x:Key="_AllTasks">Show all tasks</v:String>
+
+    <v:String x:Key="_ChangePhoto">Change photo</v:String>
+
+    <v:String x:Key="_About">About program</v:String>
+    <v:String x:Key="_Alert">Reminder of scheduled tasks</v:String>
+    <v:String x:Key="_MainPage">Main page</v:String>
+
+    <v:String x:Key="_EditTask">Edit text</v:String>
+    <v:String x:Key="_Deadline">Set deadline</v:String>
+    <v:String x:Key="_Importance">Set importance</v:String>
+    <v:String x:Key="_AddSub">Add subtask</v:String>
+    <v:String x:Key="_Delete">Delete</v:String>
+    <v:String x:Key="_AddImg">Add image</v:String>
+    <v:String x:Key="_AddFile">Add file</v:String>
+
+</ResourceDictionary>

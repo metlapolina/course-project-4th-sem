@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="ToDoshka.StatisticsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToDoshka"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:oxy="http://oxyplot.org/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="420" d:DesignWidth="350">
+    <Grid Background="Transparent">
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Label FontSize="16" Content="{DynamicResource _FromDate}"/>
+                <DatePicker x:Name="dp_Start" BorderBrush="White" Width="80"/>
+                <Label FontSize="16" Content="{DynamicResource _ToDate}"/>
+                <DatePicker x:Name="dp_Finish" BorderBrush="White" Width="80"/>
+                <Button x:Name="btn_Build" Margin="10 0 0 0" Background="Transparent" ToolTip="{DynamicResource _DblClick}" Foreground="White" Content="{DynamicResource _Build}" Click="Btn_Build_Click"/>
+            </StackPanel>
+            <oxy:Plot x:Name="oxy_Plot" PlotAreaBorderColor="White" Background="Transparent" Margin="0 10 0 0" Width="350" Height="300">
+                <oxy:Plot.Series>
+                    <oxy:LineSeries Color="Black" Title="{DynamicResource _LegendTasks}"  DataFieldX="Date" DataFieldY="Value" StrokeThickness="1" MarkerSize="3" MarkerType="Plus" ItemsSource="{Binding Points}"/>
+                </oxy:Plot.Series>
+                <oxy:Plot.Axes>
+                    <oxy:LinearAxis TicklineColor="White" TextColor="White" Position="Left" Minimum="0" />
+                    <oxy:DateTimeAxis StringFormat="dd.MM.yyyy" TicklineColor="White" TextColor="White" Position="Bottom" />
+                </oxy:Plot.Axes>
+            </oxy:Plot>
+            <Label x:Name="lbl_Scheduled" Content="{DynamicResource _Scheduled}" FontSize="16" HorizontalAlignment="Center" Foreground="White"/>
+            <Label x:Name="lbl_Completed" Content="{DynamicResource _Completed}" FontSize="16" Padding="0" HorizontalAlignment="Center" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
