@@ -88,23 +88,37 @@ namespace ToDoshka
                 bool c1 = CheckEmail();
                 bool c2 = CheckNames();
                 bool c3 = CheckPassword();
-                if (c1 && c2 && c3)
+                bool c4 = CheckExist();
+                if (c4)
                 {
-                    if (PasswordBoxdReg1.Password == PasswordBoxdReg2.Password)
+                    if (c1 && c2 && c3)
                     {
-                        Users user = new Users { User = txt_Login.Text, Name = txt_Name.Text, Surname = txt_Surname.Text,
-                            Email = txt_Email.Text, Password = PasswordBoxdReg1.Password };
-                        unit.Users.Create(user);
-                        unit.Save();
-                        MainWindow mainWindow = new MainWindow(user);
-                        mainWindow.Show();
-                        this.Close();
+                        if (PasswordBoxdReg1.Password == PasswordBoxdReg2.Password)
+                        {
+                            Users user = new Users
+                            {
+                                User = txt_Login.Text,
+                                Name = txt_Name.Text,
+                                Surname = txt_Surname.Text,
+                                Email = txt_Email.Text,
+                                Password = PasswordBoxdReg1.Password
+                            };
+                            unit.Users.Create(user);
+                            unit.Save();
+                            MainWindow mainWindow = new MainWindow(user);
+                            mainWindow.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            PasswordInvalidData(PasswordBoxdReg2);
+                            PasswordBoxdReg2.ToolTip = AddToolTip("Wrong password", "Passwords don't match.");
+                        }
                     }
-                    else
-                    {
-                        PasswordInvalidData(PasswordBoxdReg2);
-                        PasswordBoxdReg2.ToolTip = AddToolTip("Wrong password", "Passwords don't match.");
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("This user is already exist.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
@@ -211,6 +225,16 @@ namespace ToDoshka
                 PasswordInvalidData(PasswordBoxdReg2);
             }
             return false;
+        }
+
+        private bool CheckExist()
+        {
+            var user = unit.Users.Get(u => u.User == txt_Login.Text && u.Password == PasswordBoxdReg1.Password && u.Email == txt_Email.Text).FirstOrDefault();
+            if (user != null)
+            {
+                return false;
+            }
+            return true;
         }
 
         private void TextBoxInvalidData(TextBox sender)

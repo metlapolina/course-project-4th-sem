@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using ToDoshka.Model;
+using System.Text.RegularExpressions;
 
 namespace ToDoshka
 {
@@ -197,20 +198,31 @@ namespace ToDoshka
         bool checkPhone = true;
         private void Btn_EditPhone_Click(object sender, RoutedEventArgs e)
         {
+            string pattern = @"^(\+375|80)(29|25|44|33|17)([0-9]{3}([0-9]{2}){2})$";
+            Regex reg = new Regex(pattern);
             if (checkPhone)
             {
+
                 lbl_Phone.IsReadOnly = false;
                 btn_EditPhone.BorderBrush = Brushes.White;
                 checkPhone = false;
             }
             else
             {
-                user.Phone = lbl_Phone.Text;
-                Registration.unit.Users.Update(user);
-                Registration.unit.Save();
-                lbl_Phone.IsReadOnly = true;
-                btn_EditPhone.BorderBrush = Brushes.Transparent;
-                checkPhone = true;
+                Match match = reg.Match(lbl_Phone.Text);
+                if (!match.Success)
+                {
+                    MessageBox.Show("Invalid data", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    user.Phone = lbl_Phone.Text;
+                    Registration.unit.Users.Update(user);
+                    Registration.unit.Save();
+                    lbl_Phone.IsReadOnly = true;
+                    btn_EditPhone.BorderBrush = Brushes.Transparent;
+                    checkPhone = true;
+                }
             }
         }
 

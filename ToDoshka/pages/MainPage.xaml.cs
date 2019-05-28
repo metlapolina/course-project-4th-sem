@@ -182,16 +182,24 @@ namespace ToDoshka
             try
             {
                 var task = Registration.unit.Tasks.Get(t => t.UserID == user.ID && t.ID==id).Single();
-                Registration.unit.Tasks.Update(task);
-                Registration.unit.Tasks.Remove(task);
-                Registration.unit.Save();
+                var subtasks = Registration.unit.Subtasks.Get(s => s.TaskID == id);
+                int count = subtasks.Count();
                 if (task.isWork == true) {
+                    int i = sp_Work.Children.IndexOf(item);
+                    for (int j = 0; j < count; j++)
+                        sp_Work.Children.RemoveAt(i+1);
                     sp_Work.Children.Remove(item);
                 }
                 else
                 {
+                    int i = sp_Person.Children.IndexOf(item);
+                    for (int j = 0; j < count; j++)
+                        sp_Person.Children.RemoveAt(i + 1);
                     sp_Person.Children.Remove(item);
                 }
+                Registration.unit.Tasks.Update(task);
+                Registration.unit.Tasks.Remove(task);
+                Registration.unit.Save();
             }
             catch(Exception ex)
             {
@@ -258,7 +266,6 @@ namespace ToDoshka
                 Registration registration = new Registration();
                 registration.Show();
                 MainWindow.GetWindow(this).Close();
-                //Application.Current.Shutdown();
             }
         }
 
